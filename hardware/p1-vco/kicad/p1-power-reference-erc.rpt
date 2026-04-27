@@ -1,0 +1,33 @@
+ERC report (2026-04-11T19:04:57+0200, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[pin_not_connected]: Hierarchical label "PLUS12" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(177.80 mm, 50.80 mm): Hierarchical Label 'PLUS12'
+[pin_not_connected]: Hierarchical label "REFERENCE" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(177.80 mm, 58.42 mm): Hierarchical Label 'REFERENCE'
+[pin_not_connected]: Hierarchical label "MINUS12" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(177.80 mm, 66.04 mm): Hierarchical Label 'MINUS12'
+[pin_not_connected]: Hierarchical label "AGND" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(177.80 mm, 76.20 mm): Hierarchical Label 'AGND'
+[lib_symbol_mismatch]: Symbol 'C' doesn't match copy in library 'Device'
+    ; warning
+    @(60.96 mm, 63.50 mm): Symbol C30 [C]
+[lib_symbol_mismatch]: Symbol 'C' doesn't match copy in library 'Device'
+    ; warning
+    @(73.66 mm, 71.12 mm): Symbol C31 [C]
+[lib_symbol_mismatch]: Symbol 'R' doesn't match copy in library 'Device'
+    ; warning
+    @(88.90 mm, 54.61 mm): Symbol R30 [R]
+[lib_symbol_mismatch]: Symbol 'R' doesn't match copy in library 'Device'
+    ; warning
+    @(104.14 mm, 67.31 mm): Symbol R31 [R]
+[lib_symbol_mismatch]: Symbol 'C' doesn't match copy in library 'Device'
+    ; warning
+    @(119.38 mm, 67.31 mm): Symbol C32 [C]
+
+ ** ERC messages: 9  Errors 4  Warnings 5

@@ -1,0 +1,92 @@
+* 60-integrated-vco-chain.cir
+* First integrated P1 chain:
+* CV -> tune_sum -> expo current -> ramp -> threshold -> reset -> saw/pulse
+
+.param CV_IN_DC=0
+.param COARSE_V=0
+.param FINE_V=0
+.param TambC=25
+
+.param Ibase=5u
+.param SenseR=100k
+
+.param Kvt=8.617333262145e-5
+.param Vt25={Kvt * (25 + 273.15)}
+.param VtNow={Kvt * (TambC + 273.15)}
+.param ScaleNow={log(2) * (Vt25 / VtNow)}
+
+.param Ctiming=10n
+.param Vtrip=1.0
+.param Vcomp=5
+
+.param CompOn=0.02
+.param CompOff=-0.50
+.param CompVt={(CompOn + CompOff) / 2}
+.param CompVh={(CompOn - CompOff) / 2}
+
+.param ResetRon=0.1
+.param ResetRoff=1e9
+
+Vcv cv_in 0 {CV_IN_DC}
+Bsum tune_sum 0 V = v(cv_in) + {COARSE_V} + {FINE_V}
+
+* Mirror the same expo law into the ramp core and a sense node.
+Bexpo_ramp 0 ramp I = {Ibase * exp(ScaleNow * v(tune_sum))}
+Bexpo_sense 0 expo_out I = {Ibase * exp(ScaleNow * v(tune_sum))}
+Rsense expo_out 0 {SenseR}
+
+Ctiming ramp 0 {Ctiming} ic=0
+Rbleed ramp 0 10Meg
+
+Bthreshold threshold_node 0 V = v(ramp) - {Vtrip}
+
+Vhi hi 0 {Vcomp}
+Rpullcomp reset_ctrl 0 10k
+Scomp hi reset_ctrl threshold_node 0 SWCOMP
+.model SWCOMP SW(Ron=1 Roff=1e9 Vt={CompVt} Vh={CompVh})
+
+Sreset ramp 0 reset_ctrl 0 SWRST
+.model SWRST SW(Ron={ResetRon} Roff={ResetRoff} Vt=2.5 Vh=0.5)
+
+Bsaw saw_out 0 V = v(ramp)
+Bpulse pulse_out 0 V = v(reset_ctrl)
+
+.tran 1u 12m uic maxstep=1u
+
+.control
+set filetype=ascii
+
+* Nominal 0 V run for direct waveform inspection.
+run
+wrdata 60-integrated-vco-chain-nominal.csv time v(tune_sum) v(expo_out) v(ramp) v(threshold_node) v(reset_ctrl) v(saw_out) v(pulse_out)
+meas tran nominal_period trig v(reset_ctrl) val=2.5 rise=4 targ v(reset_ctrl) val=2.5 rise=5
+
+* Sweep a modest musical range.
+setplot const
+let cv_vals = unitvec(7)
+let expo_vals = unitvec(7)
+let cycle_lows = unitvec(7)
+let cycle_highs = unitvec(7)
+let periods = unitvec(7)
+let freqs = unitvec(7)
+let idx = 0
+foreach cv -1 -0.5 0 0.5 1 1.5 2
+  alterparam CV_IN_DC = $cv
+  reset
+  run
+  meas tran cycle_min min v(ramp) from=4m to=12m
+  meas tran cycle_max max v(ramp) from=4m to=12m
+  meas tran period trig v(reset_ctrl) val=2.5 rise=3 targ v(reset_ctrl) val=2.5 rise=4
+  meas tran expo_avg avg v(expo_out) from=4m to=12m
+  let cv_vals[$&idx] = $cv
+  let expo_vals[$&idx] = expo_avg
+  let cycle_lows[$&idx] = cycle_min
+  let cycle_highs[$&idx] = cycle_max
+  let periods[$&idx] = period
+  let freqs[$&idx] = 1 / period
+  let idx = idx + 1
+end
+print cv_vals expo_vals cycle_lows cycle_highs periods freqs > 60-integrated-vco-chain-summary.txt
+.endc
+
+.end

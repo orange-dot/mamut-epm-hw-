@@ -1,0 +1,112 @@
+* 40-reset-sensitivity-core.cir
+* Parameter study for the reset path:
+* sweep reset Ron, reset leakage, and comparator reset window.
+
+.param Ichg=100u
+.param Ctiming=10n
+.param Vtrip=1.0
+.param Vcomp=5
+
+.param CompOn=0.02
+.param CompOff=-0.50
+.param CompVt={(CompOn + CompOff) / 2}
+.param CompVh={(CompOn - CompOff) / 2}
+
+.param ResetRon=0.1
+.param ResetRoff=1e9
+
+Icharge ramp 0 DC {-Ichg}
+Ctiming ramp 0 {Ctiming} ic=0
+Rbleed ramp 0 10Meg
+
+Bthreshold threshold_node 0 V = v(ramp) - {Vtrip}
+
+Vhi hi 0 {Vcomp}
+Rpullcomp reset_ctrl 0 10k
+Scomp hi reset_ctrl threshold_node 0 SWCOMP
+.model SWCOMP SW(Ron=1 Roff=1e9 Vt={CompVt} Vh={CompVh})
+
+Sreset ramp 0 reset_ctrl 0 SWRST
+.model SWRST SW(Ron={ResetRon} Roff={ResetRoff} Vt=2.5 Vh=0.5)
+
+Bsaw saw_out 0 V = v(ramp)
+
+.tran 100n 0.5m uic maxstep=100n
+
+.control
+set filetype=ascii
+
+* Nominal waveform for visual comparison.
+run
+wrdata 40-reset-sensitivity-core-nominal.csv time v(ramp) v(threshold_node) v(reset_ctrl) v(saw_out)
+
+* Sweep reset on-resistance.
+setplot const
+let ron_vals = unitvec(4)
+let ron_lows = unitvec(4)
+let ron_highs = unitvec(4)
+let ron_periods = unitvec(4)
+let idx = 0
+foreach rr 0.05 0.10 0.50 1.00
+  alterparam ResetRon = $rr
+  reset
+  run
+  meas tran cycle_min min v(ramp) from=0.15m to=0.5m
+  meas tran cycle_max max v(ramp) from=0.15m to=0.5m
+  meas tran period trig v(reset_ctrl) val=2.5 rise=3 targ v(reset_ctrl) val=2.5 rise=4
+  let ron_vals[$&idx] = $rr
+  let ron_lows[$&idx] = cycle_min
+  let ron_highs[$&idx] = cycle_max
+  let ron_periods[$&idx] = period
+  let idx = idx + 1
+end
+print ron_vals ron_lows ron_highs ron_periods > 40-reset-ron-summary.txt
+
+* Sweep reset leakage.
+alterparam ResetRon = 0.1
+setplot const
+let roff_vals = unitvec(4)
+let roff_lows = unitvec(4)
+let roff_highs = unitvec(4)
+let roff_periods = unitvec(4)
+let idx = 0
+foreach rr 1e6 1e8 1e10 1e12
+  alterparam ResetRoff = $rr
+  reset
+  run
+  meas tran cycle_min min v(ramp) from=0.15m to=0.5m
+  meas tran cycle_max max v(ramp) from=0.15m to=0.5m
+  meas tran period trig v(reset_ctrl) val=2.5 rise=3 targ v(reset_ctrl) val=2.5 rise=4
+  let roff_vals[$&idx] = $rr
+  let roff_lows[$&idx] = cycle_min
+  let roff_highs[$&idx] = cycle_max
+  let roff_periods[$&idx] = period
+  let idx = idx + 1
+end
+print roff_vals roff_lows roff_highs roff_periods > 40-reset-roff-summary.txt
+
+* Sweep comparator reset-off depth while keeping turn-on point fixed.
+alterparam ResetRoff = 1e9
+setplot const
+let off_vals = unitvec(4)
+let off_lows = unitvec(4)
+let off_highs = unitvec(4)
+let off_periods = unitvec(4)
+let idx = 0
+foreach off -0.20 -0.35 -0.50 -0.65
+  alterparam CompOff = $off
+  reset
+  run
+  meas tran cycle_min min v(ramp) from=0.15m to=0.5m
+  meas tran cycle_max max v(ramp) from=0.15m to=0.5m
+  meas tran period trig v(reset_ctrl) val=2.5 rise=3 targ v(reset_ctrl) val=2.5 rise=4
+  let off_vals[$&idx] = $off
+  let off_lows[$&idx] = cycle_min
+  let off_highs[$&idx] = cycle_max
+  let off_periods[$&idx] = period
+  let idx = idx + 1
+end
+print off_vals off_lows off_highs off_periods > 40-reset-window-summary.txt
+.endc
+
+.end

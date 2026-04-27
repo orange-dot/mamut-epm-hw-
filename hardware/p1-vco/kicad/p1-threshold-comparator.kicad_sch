@@ -1,0 +1,1665 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "c4bb32a9-6f00-4020-9fa3-d5889edd7889")
+	(paper "A4")
+	(title_block
+		(title "P1 Threshold Comparator")
+	)
+	(lib_symbols
+		(symbol "mamut-p1-vco:LM311_P1"
+			(pin_names
+				(offset 0.127)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 3.81 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "LM311"
+				(at 3.81 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.st.com/resource/en/datasheet/lm311.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Voltage Comparator, DIP-8/SOIC-8"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cmp open collector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "LM311_P1_0_1"
+				(polyline
+					(pts
+						(xy 3.683 -0.381) (xy 3.302 -0.381) (xy 3.683 0) (xy 3.302 0.381) (xy 2.921 0) (xy 3.302 -0.381)
+						(xy 2.921 -0.381)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy -5.08 5.08) (xy -5.08 -5.08) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "LM311_P1_1_1"
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 7.62 270)
+					(length 3.81)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 0 7.62 270)
+					(length 5.08)
+					(name "BAL"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 90)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 2.54 7.62 270)
+					(length 6.35)
+					(name "STRB"
+						(effects
+							(font
+								(size 0.508 0.508)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Connector:TestPoint_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint_Small"
+				(at 0 2.032 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_Small_0_1"
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_Small_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 0)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(global_label "+12V"
+		(shape input)
+		(at 15.24 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "de0e9f2d-632f-4f85-aa5d-9cdb35a2480d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 28.448 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "-12V"
+		(shape input)
+		(at 15.24 78.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f484c85d-1e21-46f6-bec0-89cdd9bc96ea")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 28.448 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(hierarchical_label "AGND"
+		(shape input)
+		(at 15.24 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "33333333-3333-4333-8333-000000000003")
+	)
+	(hierarchical_label "REFERENCE"
+		(shape input)
+		(at 15.24 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "33333333-3333-4333-8333-000000000004")
+	)
+	(hierarchical_label "RAMP_NODE"
+		(shape input)
+		(at 15.24 68.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "33333333-3333-4333-8333-000000000005")
+	)
+	(hierarchical_label "SYNC_IN"
+		(shape input)
+		(at 15.24 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "33333333-3333-4333-8333-000000000006")
+	)
+	(hierarchical_label "THRESHOLD_NODE"
+		(shape output)
+		(at 190.5 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "33333333-3333-4333-8333-000000000007")
+	)
+	(hierarchical_label "RESET_CTRL"
+		(shape output)
+		(at 190.5 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "33333333-3333-4333-8333-000000000008")
+	)
+	(hierarchical_label "PULSE_OUT"
+		(shape output)
+		(at 190.5 90.17 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "33333333-3333-4333-8333-000000000009")
+	)
+	(text "Comparator core for P1: ramp sense on `+`, threshold network on `-`, open collector reset drive, and a light pulse tap.\nThis is the first electrically meaningful KiCad capture of the threshold path, not the final production comparator."
+		(exclude_from_sim no)
+		(at 22.86 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "33333333-3333-4333-8333-000000000023")
+	)
+	(text "TP_THRESHOLD"
+		(exclude_from_sim no)
+		(at 177.8 76.2 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left bottom)
+		)
+		(uuid "33333333-3333-4333-8333-000000000024")
+	)
+	(text "TP_RESET_CTRL"
+		(exclude_from_sim no)
+		(at 177.8 73.66 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left bottom)
+		)
+		(uuid "33333333-3333-4333-8333-000000000025")
+	)
+	(text "TP_PULSE"
+		(exclude_from_sim no)
+		(at 177.8 92.71 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(justify left bottom)
+		)
+		(uuid "33333333-3333-4333-8333-000000000026")
+	)
+	(symbol
+		(lib_id "mamut-p1-vco:LM311_P1")
+		(at 96.52 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33333333-3333-4333-8333-000000000030")
+		(property "Reference" "U1"
+			(at 102.87 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LM311"
+			(at 102.87 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 96.52 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.st.com/resource/en/datasheet/lm311.pdf"
+			(at 96.52 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Voltage comparator, open collector"
+			(at 96.52 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33333333-3333-4333-8333-000000000031")
+		)
+		(pin "2"
+			(uuid "33333333-3333-4333-8333-000000000032")
+		)
+		(pin "3"
+			(uuid "33333333-3333-4333-8333-000000000033")
+		)
+		(pin "4"
+			(uuid "33333333-3333-4333-8333-000000000034")
+		)
+		(pin "5"
+			(uuid "33333333-3333-4333-8333-000000000035")
+		)
+		(pin "6"
+			(uuid "33333333-3333-4333-8333-000000000036")
+		)
+		(pin "7"
+			(uuid "33333333-3333-4333-8333-000000000037")
+		)
+		(pin "8"
+			(uuid "33333333-3333-4333-8333-000000000038")
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134/3d1e02de-dc8a-4e75-8efe-b3ecb478e4fe"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 43.18 67.31 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33333333-3333-4333-8333-000000000040")
+		(property "Reference" "R10"
+			(at 40.64 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100k"
+			(at 40.64 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 43.18 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Reference resistor into threshold node"
+			(at 43.18 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33333333-3333-4333-8333-000000000041")
+		)
+		(pin "2"
+			(uuid "33333333-3333-4333-8333-000000000042")
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134/3d1e02de-dc8a-4e75-8efe-b3ecb478e4fe"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 58.42 82.55 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33333333-3333-4333-8333-000000000050")
+		(property "Reference" "R11"
+			(at 55.88 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "330k"
+			(at 55.88 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 58.42 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 58.42 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Optional sync injection into threshold node"
+			(at 58.42 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33333333-3333-4333-8333-000000000051")
+		)
+		(pin "2"
+			(uuid "33333333-3333-4333-8333-000000000052")
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134/3d1e02de-dc8a-4e75-8efe-b3ecb478e4fe"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 154.94 82.55 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33333333-3333-4333-8333-000000000060")
+		(property "Reference" "R12"
+			(at 152.4 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "4M7"
+			(at 152.4 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 154.94 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Hysteresis path from reset drive back into threshold node"
+			(at 154.94 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33333333-3333-4333-8333-000000000061")
+		)
+		(pin "2"
+			(uuid "33333333-3333-4333-8333-000000000062")
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134/3d1e02de-dc8a-4e75-8efe-b3ecb478e4fe"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 139.7 67.31 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33333333-3333-4333-8333-000000000070")
+		(property "Reference" "R13"
+			(at 137.16 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "2k2"
+			(at 137.16 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 139.7 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Open-collector pull-up for reset drive"
+			(at 139.7 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33333333-3333-4333-8333-000000000071")
+		)
+		(pin "2"
+			(uuid "33333333-3333-4333-8333-000000000072")
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134/3d1e02de-dc8a-4e75-8efe-b3ecb478e4fe"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 170.18 90.17 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33333333-3333-4333-8333-000000000080")
+		(property "Reference" "R14"
+			(at 167.64 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1k"
+			(at 167.64 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 170.18 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 170.18 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Pulse monitor isolation resistor"
+			(at 170.18 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33333333-3333-4333-8333-000000000081")
+		)
+		(pin "2"
+			(uuid "33333333-3333-4333-8333-000000000082")
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134/3d1e02de-dc8a-4e75-8efe-b3ecb478e4fe"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 177.8 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "33333333-3333-4333-8333-000000000090")
+		(property "Reference" "TP1"
+			(at 175.26 68.0721 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 175.26 65.5321 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+			(at 182.88 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 182.88 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Threshold monitor point"
+			(at 177.8 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33333333-3333-4333-8333-000000000091")
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134/3d1e02de-dc8a-4e75-8efe-b3ecb478e4fe"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 177.8 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "33333333-3333-4333-8333-0000000000a0")
+		(property "Reference" "TP2"
+			(at 175.26 83.3121 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 175.26 80.7721 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+			(at 182.88 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 182.88 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Reset drive monitor point"
+			(at 177.8 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33333333-3333-4333-8333-0000000000a1")
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134/3d1e02de-dc8a-4e75-8efe-b3ecb478e4fe"
+					(reference "TP2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 177.8 90.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "33333333-3333-4333-8333-0000000000b0")
+		(property "Reference" "TP3"
+			(at 175.26 101.0921 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 175.26 98.5521 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+			(at 182.88 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 182.88 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Pulse monitor point"
+			(at 177.8 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "33333333-3333-4333-8333-0000000000b1")
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134/3d1e02de-dc8a-4e75-8efe-b3ecb478e4fe"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(junction
+		(at 93.98 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000b4")
+	)
+	(junction
+		(at 96.52 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000b5")
+	)
+	(junction
+		(at 135.89 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000b6")
+	)
+	(junction
+		(at 46.99 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000b7")
+	)
+	(junction
+		(at 54.61 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000b8")
+	)
+	(junction
+		(at 88.9 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000b9")
+	)
+	(junction
+		(at 151.13 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000ba")
+	)
+	(junction
+		(at 177.8 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000bb")
+	)
+	(junction
+		(at 143.51 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000bc")
+	)
+	(junction
+		(at 158.75 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000bd")
+	)
+	(junction
+		(at 166.37 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000be")
+	)
+	(junction
+		(at 177.8 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000bf")
+	)
+	(junction
+		(at 177.8 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "33333333-3333-4333-8333-0000000000c2")
+	)
+	(wire
+		(pts
+			(xy 15.24 63.5) (xy 93.98 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000100")
+	)
+	(wire
+		(pts
+			(xy 93.98 63.5) (xy 93.98 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000101")
+	)
+	(wire
+		(pts
+			(xy 93.98 58.42) (xy 135.89 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000102")
+	)
+	(wire
+		(pts
+			(xy 135.89 58.42) (xy 135.89 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000103")
+	)
+	(wire
+		(pts
+			(xy 15.24 67.31) (xy 39.37 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000104")
+	)
+	(wire
+		(pts
+			(xy 15.24 68.58) (xy 88.9 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000105")
+	)
+	(wire
+		(pts
+			(xy 15.24 78.74) (xy 93.98 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000106")
+	)
+	(wire
+		(pts
+			(xy 15.24 82.55) (xy 62.23 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000107")
+	)
+	(wire
+		(pts
+			(xy 15.24 91.44) (xy 96.52 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000108")
+	)
+	(wire
+		(pts
+			(xy 96.52 91.44) (xy 96.52 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000109")
+	)
+	(wire
+		(pts
+			(xy 46.99 67.31) (xy 46.99 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-00000000010a")
+	)
+	(wire
+		(pts
+			(xy 46.99 73.66) (xy 54.61 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-00000000010b")
+	)
+	(wire
+		(pts
+			(xy 54.61 82.55) (xy 54.61 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-00000000010c")
+	)
+	(wire
+		(pts
+			(xy 151.13 82.55) (xy 151.13 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-00000000010d")
+	)
+	(wire
+		(pts
+			(xy 54.61 73.66) (xy 88.9 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-00000000010e")
+	)
+	(wire
+		(pts
+			(xy 88.9 73.66) (xy 151.13 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-00000000010f")
+	)
+	(wire
+		(pts
+			(xy 104.14 71.12) (xy 143.51 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000110")
+	)
+	(wire
+		(pts
+			(xy 143.51 67.31) (xy 143.51 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000111")
+	)
+	(wire
+		(pts
+			(xy 158.75 82.55) (xy 158.75 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000112")
+	)
+	(wire
+		(pts
+			(xy 166.37 90.17) (xy 166.37 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000113")
+	)
+	(wire
+		(pts
+			(xy 143.51 71.12) (xy 158.75 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000114")
+	)
+	(wire
+		(pts
+			(xy 158.75 71.12) (xy 166.37 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000115")
+	)
+	(wire
+		(pts
+			(xy 173.99 90.17) (xy 177.8 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000116")
+	)
+	(wire
+		(pts
+			(xy 151.13 73.66) (xy 177.8 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000117")
+	)
+	(wire
+		(pts
+			(xy 166.37 71.12) (xy 177.8 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33333333-3333-4333-8333-000000000118")
+	)
+	(wire
+		(pts
+			(xy 177.8 90.17) (xy 190.5 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f852f6b-a0bb-4d17-ae30-67619f2f4fb3")
+	)
+	(wire
+		(pts
+			(xy 177.8 73.66) (xy 190.5 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ae3d395-5848-44f6-b7b7-c611e9209681")
+	)
+	(wire
+		(pts
+			(xy 177.8 71.12) (xy 190.5 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e67fb69f-c84b-4ff0-a5ab-9bd5ef6493d3")
+	)
+	(no_connect
+		(at 96.52 63.5)
+		(uuid "33333333-3333-4333-8333-0000000000c0")
+	)
+	(no_connect
+		(at 99.06 63.5)
+		(uuid "33333333-3333-4333-8333-0000000000c1")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

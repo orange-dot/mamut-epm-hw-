@@ -1,0 +1,1600 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "cf57252c-7d71-4c1f-9b31-d3fab538c134")
+	(paper "A4")
+	(title_block
+		(title "Mamut P1 VCO")
+		(comment 1 "Learning Prototype")
+		(comment 2 "Block Diagram Sprint")
+	)
+	(text "P1 VCO block diagram"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left bottom)
+		)
+		(uuid "8f3c961e-c888-42be-9507-ad0c9f57788a")
+	)
+	(text "This sheet is now a real block map: native KiCad sheets, named interfaces, and the first locked P1 signal flow."
+		(exclude_from_sim no)
+		(at 25.4 34.29 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ce9d7b03-0a00-4f87-890f-ad3ff068b6b5")
+	)
+	(global_label "+12V"
+		(shape input)
+		(at 68.58 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8f3c961e-c888-42be-9507-ad0c9f577990")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.788 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "-12V"
+		(shape input)
+		(at 68.58 93.98 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8f3c961e-c888-42be-9507-ad0c9f577991")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.788 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(label "CV_IN"
+		(at 17.78 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "35d60ea1-ce97-4d14-be20-9eb47c32b5cc")
+	)
+	(label "COARSE_TUNE"
+		(at 17.78 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "06627d30-5452-4d6d-8ff3-156cb49953d5")
+	)
+	(label "FINE_TUNE"
+		(at 17.78 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "df8f34ad-7947-413a-873d-4d2cd879ead4")
+	)
+	(label "AGND"
+		(at 17.78 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4af13cd8-88f0-41e4-b1fd-07db95796e4b")
+	)
+	(label "TUNE_SUM"
+		(at 66.04 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "235174cd-4387-4f70-9890-3fbe798729c2")
+	)
+	(label "REFERENCE"
+		(at 68.58 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a212a3e0-e59e-4571-915d-498b9af894e2")
+	)
+	(label "AGND"
+		(at 68.58 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8f3c961e-c888-42be-9507-ad0c9f577992")
+	)
+	(label "EXPO_OUT"
+		(at 121.92 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c001843f-52cd-4954-a098-3f8cf10c7e4d")
+	)
+	(label "RESET_CTRL"
+		(at 119.38 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fd43d70a-3ebb-41e9-a0e1-bbaaff7f1a9b")
+	)
+	(label "AGND"
+		(at 119.38 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8c33d13b-6d60-4d98-bdc7-dc3f8367dc61")
+	)
+	(label "RAMP_NODE"
+		(at 177.8 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5b6ce3d6-9edd-4697-a8c8-1918e0540d67")
+	)
+	(label "AGND"
+		(at 175.26 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5b6ce3d6-9edd-4697-a8c8-1918e0540d68")
+	)
+	(label "SAW_OUT"
+		(at 175.26 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "23f9d8c3-d2d9-4182-9d8c-bac2b3f736a8")
+	)
+	(label "REFERENCE"
+		(at 175.26 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e3e8f955-08a0-4aeb-b46c-274fa8dd697a")
+	)
+	(label "SYNC_IN"
+		(at 175.26 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "42b57523-3906-4bda-962c-c7a200b406b1")
+	)
+	(label "THRESHOLD_NODE"
+		(at 223.52 68.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ff76d3d5-0f05-4cf0-83b5-37c8221e45d6")
+	)
+	(label "RESET_CTRL"
+		(at 223.52 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0bd56607-1e91-4ef4-ba1d-fc27d3eca63c")
+	)
+	(label "PULSE_OUT"
+		(at 223.52 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "016b61c9-68ce-4a23-8f1e-fbe6afdc4719")
+	)
+	(label "RESET_CTRL"
+		(at 231.14 68.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0cb2b792-dce0-4619-86f7-3744785ba6fb")
+	)
+	(label "RAMP_NODE"
+		(at 231.14 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3f7da2d4-5fde-4ffe-b180-d0a9d7f4c73d")
+	)
+	(label "AGND"
+		(at 231.14 83.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3f7da2d4-5fde-4ffe-b180-d0a9d7f4c73e")
+	)
+	(label "REFERENCE"
+		(at 96.52 127 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "aa280a30-a629-4a91-a389-b3c767a08748")
+	)
+	(label "EXPO_OUT"
+		(at 96.52 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "32577b4e-ba87-43e1-8cb1-3b216560443f")
+	)
+	(label "RAMP_NODE"
+		(at 96.52 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "30485bd9-5aa5-4c4e-8af5-17bd2e563fed")
+	)
+	(label "RESET_CTRL"
+		(at 96.52 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "30485bd9-5aa5-4c4e-8af5-17bd2e563fee")
+	)
+	(label "THRESHOLD_NODE"
+		(at 187.96 127 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e1c5f4fb-2afa-4fd9-ab5d-baccbf2fed91")
+	)
+	(label "SAW_OUT"
+		(at 187.96 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c3e4985a-2495-4d7a-bf3e-0232151f7698")
+	)
+	(label "PULSE_OUT"
+		(at 187.96 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4d24b208-3c6c-4600-a01b-fb2b79662266")
+	)
+	(label "REFERENCE"
+		(at 73.66 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "78924717-04e9-4849-bb72-433b5927fd0d")
+	)
+	(label "AGND"
+		(at 73.66 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c96ef06d-63d6-4c7a-b1b1-430dd30b3623")
+	)
+	(text "Locked P1 flow: CV -> tune -> expo -> integrator -> threshold -> reset -> saw."
+		(exclude_from_sim no)
+		(at 25.4 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "acae1e1e-03dd-437d-8e5c-393f3b7921db")
+	)
+	(text "Feedback and observation nets are named on this top sheet so later detailed capture can inherit the same vocabulary."
+		(exclude_from_sim no)
+		(at 25.4 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d7e720d1-aea3-4fcc-9532-4fa721d7fb5f")
+	)
+	(sheet
+		(at 25.4 55.88)
+		(size 35.56 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c9c97be4-1688-4985-bbcc-6eaa53ae9063")
+		(property "Sheetname" "input_tune"
+			(at 25.4 55.1684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "p1-input-tune.kicad_sch"
+			(at 25.4 86.9446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "CV_IN" input
+			(at 25.4 63.5 180)
+			(uuid "c4bb32a9-6f00-4020-9fa3-d5889edd7888")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "COARSE_TUNE" input
+			(at 25.4 71.12 180)
+			(uuid "2ad5526c-6e25-40eb-b2fd-8c128ebc1918")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "FINE_TUNE" input
+			(at 25.4 78.74 180)
+			(uuid "006fd650-9b39-40ff-ae5a-fb406bf531cf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "AGND" input
+			(at 25.4 86.36 180)
+			(uuid "f081d6d8-b255-4c62-b8ff-4d7d9c80c9f6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "TUNE_SUM" output
+			(at 60.96 71.12 0)
+			(uuid "caffaa86-a878-41f0-b513-e1431f6d5d54")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 76.2 55.88)
+		(size 35.56 40.64)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "1caa32f8-c6c6-49df-b4af-5301ee64bc6f")
+		(property "Sheetname" "expo_converter"
+			(at 76.2 55.1684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "p1-expo-converter.kicad_sch"
+			(at 76.2 97.1046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "+12V" input
+			(at 76.2 63.5 180)
+			(uuid "8f3c961e-c888-42be-9507-ad0c9f577993")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "TUNE_SUM" input
+			(at 76.2 71.12 180)
+			(uuid "408a65df-0484-4a62-9b0e-62914f95a5dc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "REFERENCE" input
+			(at 76.2 78.74 180)
+			(uuid "364a98e2-9e3d-4ab6-b8aa-d0403a880fb2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "AGND" input
+			(at 76.2 86.36 180)
+			(uuid "8f3c961e-c888-42be-9507-ad0c9f577994")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "-12V" input
+			(at 76.2 93.98 180)
+			(uuid "8f3c961e-c888-42be-9507-ad0c9f577995")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "EXPO_OUT" output
+			(at 111.76 71.12 0)
+			(uuid "80d313df-1855-4643-bdbd-537aaeafa4dd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 127 55.88)
+		(size 40.64 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "e6914917-537e-450c-86c1-f6ee65bfc281")
+		(property "Sheetname" "current_integrator"
+			(at 127 55.1684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "p1-current-integrator.kicad_sch"
+			(at 127 86.9446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "AGND" input
+			(at 127 63.5 180)
+			(uuid "7f94019e-6cf6-4d56-aae7-07e9a1d12a2e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "EXPO_OUT" input
+			(at 127 71.12 180)
+			(uuid "59024cc4-4005-4dc0-b2cb-9978349d751b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RESET_CTRL" input
+			(at 127 78.74 180)
+			(uuid "1c81d900-c573-4f85-925d-d45626bea32a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RAMP_NODE" output
+			(at 167.64 71.12 0)
+			(uuid "e5d3ec0a-3625-4ef4-9680-93049b763bfa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SAW_OUT" output
+			(at 167.64 66.04 0)
+			(uuid "1fd77aa4-f768-46fd-a8c9-e6d0e85f8797")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 182.88 55.88)
+		(size 40.64 38.1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "3d1e02de-dc8a-4e75-8efe-b3ecb478e4fe")
+		(property "Sheetname" "threshold_comparator"
+			(at 182.88 55.1684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "p1-threshold-comparator.kicad_sch"
+			(at 182.88 92.0246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "AGND" input
+			(at 182.88 63.5 180)
+			(uuid "3d1e02de-dc8a-4e75-8efe-b3ecb478e500")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RAMP_NODE" input
+			(at 182.88 71.12 180)
+			(uuid "97f54282-335c-4208-bcaa-ea0be8f16f3e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "REFERENCE" input
+			(at 182.88 78.74 180)
+			(uuid "07fab54b-5696-4649-9bdd-803bf456daa6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SYNC_IN" input
+			(at 182.88 86.36 180)
+			(uuid "1452a525-ad93-4cb6-aa0a-3e148a0aa606")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "THRESHOLD_NODE" output
+			(at 223.52 68.58 0)
+			(uuid "039b26c2-7845-447a-a284-ce4219060771")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "RESET_CTRL" output
+			(at 223.52 76.2 0)
+			(uuid "ffb36ec2-afb0-498d-a127-2d6a782f4205")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PULSE_OUT" output
+			(at 223.52 83.82 0)
+			(uuid "f58f8526-5ac5-42c8-8deb-ea146b2ad850")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 238.76 55.88)
+		(size 35.56 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "dfae9525-b584-40cf-91f2-ac9405d20ad0")
+		(property "Sheetname" "reset_output"
+			(at 238.76 55.1684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "p1-reset-output.kicad_sch"
+			(at 238.76 86.9446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "RESET_CTRL" input
+			(at 238.76 68.58 180)
+			(uuid "9725dc63-2fb7-41f2-a60e-1117fc5e664b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RAMP_NODE" input
+			(at 238.76 76.2 180)
+			(uuid "7aa1afad-7fe1-4019-bf14-e13d45542f2e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "AGND" input
+			(at 238.76 83.82 180)
+			(uuid "dfae9525-b584-40cf-91f2-ac9405d20ae0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 25.4 116.84)
+		(size 40.64 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "879f63bc-95fa-48f3-b9a5-294ef691cdb7")
+		(property "Sheetname" "power_reference"
+			(at 25.4 116.1284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "p1-power-reference.kicad_sch"
+			(at 25.4 147.9046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "REFERENCE" output
+			(at 66.04 121.92 0)
+			(uuid "6b85618a-675f-4a69-bad6-7e61b10b5ba5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "AGND" output
+			(at 66.04 137.16 0)
+			(uuid "c40c516d-a5d8-4339-aad6-a7524623bacc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 208.28 116.84)
+		(size 45.72 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "7f4a12c9-82d8-4dd7-8cf8-3c3bd7c31125")
+		(property "Sheetname" "bench_io"
+			(at 208.28 116.1284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "p1-bench-io.kicad_sch"
+			(at 208.28 147.9046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "AGND" input
+			(at 208.28 121.92 180)
+			(uuid "f74a4cda-f75f-4ca4-a05d-8c19a7b90d6d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "PULSE_OUT" input
+			(at 208.28 127 180)
+			(uuid "4f0be7bb-3984-42cd-8c32-f3b18f8b534d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SAW_OUT" input
+			(at 208.28 132.08 180)
+			(uuid "735dd9f7-8eab-426b-ba8f-bc226cad02f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SYNC_IN" output
+			(at 254 124.46 0)
+			(uuid "6fb941af-4fe0-4d79-a82c-ad10bf574a33")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "FINE_TUNE" output
+			(at 254 129.54 0)
+			(uuid "83ceb1b8-a560-443f-a6d6-a3db8bc665f0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "COARSE_TUNE" output
+			(at 254 134.62 0)
+			(uuid "33d49a0b-cbd7-4df8-b1f4-66666b1c0f3d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CV_IN" output
+			(at 254 139.7 0)
+			(uuid "13544659-1120-4717-9a97-088ab7de5e2c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 104.14 119.38)
+		(size 76.2 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "32daa506-a259-43ef-b85e-0e1bb83e1f9e")
+		(property "Sheetname" "trim_test"
+			(at 104.14 118.6684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "p1-trim-test.kicad_sch"
+			(at 104.14 150.4446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "REFERENCE" input
+			(at 104.14 127 180)
+			(uuid "2d50e618-8349-4a1d-8640-cbc6e733a947")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "EXPO_OUT" input
+			(at 104.14 132.08 180)
+			(uuid "303639f9-145e-49c2-8a2e-afb8424aac96")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RAMP_NODE" input
+			(at 104.14 137.16 180)
+			(uuid "f01f5d9f-17eb-4546-bb44-6629960dcab1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RESET_CTRL" input
+			(at 104.14 142.24 180)
+			(uuid "32daa506-a259-43ef-b85e-0e1bb83e1fa0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "THRESHOLD_NODE" input
+			(at 180.34 127 0)
+			(uuid "58ccad78-a7d1-4170-be19-d6792684c647")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SAW_OUT" input
+			(at 180.34 132.08 0)
+			(uuid "ff1bfda1-44ea-42cb-aa5f-f07a82782d51")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PULSE_OUT" input
+			(at 180.34 137.16 0)
+			(uuid "0e6f81a2-b916-4d2f-a671-d5e549a44176")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "mamut-p1-vco"
+				(path "/cf57252c-7d71-4c1f-9b31-d3fab538c134"
+					(page "8")
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 17.78 63.5) (xy 25.4 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1211f68c-d8cb-4f9f-8236-3b6dc76d36a0")
+	)
+	(wire
+		(pts
+			(xy 17.78 71.12) (xy 25.4 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df7778db-f657-4673-9ce4-3a48c3a62d32")
+	)
+	(wire
+		(pts
+			(xy 17.78 78.74) (xy 25.4 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5549800-747f-4ece-87bb-701cdd79dbb3")
+	)
+	(wire
+		(pts
+			(xy 17.78 86.36) (xy 25.4 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0fb26738-8c4d-42c2-8538-0ec0d23a625b")
+	)
+	(wire
+		(pts
+			(xy 68.58 63.5) (xy 76.2 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f3c961e-c888-42be-9507-ad0c9f577996")
+	)
+	(wire
+		(pts
+			(xy 60.96 71.12) (xy 76.2 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81e5cc6b-2a4a-4ef1-824e-b9272bd84888")
+	)
+	(wire
+		(pts
+			(xy 68.58 78.74) (xy 76.2 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16c48a0c-e223-4af0-97db-1a6f69e26a34")
+	)
+	(wire
+		(pts
+			(xy 68.58 86.36) (xy 76.2 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f3c961e-c888-42be-9507-ad0c9f577997")
+	)
+	(wire
+		(pts
+			(xy 68.58 93.98) (xy 76.2 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f3c961e-c888-42be-9507-ad0c9f577998")
+	)
+	(wire
+		(pts
+			(xy 119.38 63.5) (xy 127 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c611bcf-40f2-4f52-ab49-5b22771c6bc5")
+	)
+	(wire
+		(pts
+			(xy 111.76 71.12) (xy 127 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d698dcdd-40dd-4e8c-aff2-b7f1405e7b28")
+	)
+	(wire
+		(pts
+			(xy 119.38 78.74) (xy 127 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebe462bd-5d3f-493f-9875-d4f0248acde0")
+	)
+	(wire
+		(pts
+			(xy 167.64 71.12) (xy 182.88 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52dbd616-b70d-4791-aa8a-2779468a2fde")
+	)
+	(wire
+		(pts
+			(xy 167.64 66.04) (xy 175.26 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9219d473-e7cb-4a76-b512-3e586e2e5f97")
+	)
+	(wire
+		(pts
+			(xy 175.26 78.74) (xy 182.88 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46ef77d8-1572-41f3-9a76-d76de2b1cd1b")
+	)
+	(wire
+		(pts
+			(xy 175.26 86.36) (xy 182.88 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4de")
+	)
+	(wire
+		(pts
+			(xy 223.52 83.82) (xy 223.52 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4e1")
+	)
+	(wire
+		(pts
+			(xy 231.14 68.58) (xy 238.76 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4e2")
+	)
+	(wire
+		(pts
+			(xy 231.14 76.2) (xy 238.76 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4e3")
+	)
+	(wire
+		(pts
+			(xy 66.04 121.92) (xy 73.66 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4e5")
+	)
+	(wire
+		(pts
+			(xy 66.04 137.16) (xy 73.66 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4e8")
+	)
+	(wire
+		(pts
+			(xy 96.52 127) (xy 104.14 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4e9")
+	)
+	(wire
+		(pts
+			(xy 96.52 132.08) (xy 104.14 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4ea")
+	)
+	(wire
+		(pts
+			(xy 96.52 137.16) (xy 104.14 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4eb")
+	)
+	(wire
+		(pts
+			(xy 180.34 127) (xy 187.96 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4ec")
+	)
+	(wire
+		(pts
+			(xy 180.34 132.08) (xy 187.96 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4ed")
+	)
+	(wire
+		(pts
+			(xy 180.34 137.16) (xy 187.96 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4ee")
+	)
+	(wire
+		(pts
+			(xy 175.26 63.5) (xy 182.88 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4ef")
+	)
+	(wire
+		(pts
+			(xy 231.14 83.82) (xy 238.76 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4f2")
+	)
+	(wire
+		(pts
+			(xy 96.52 142.24) (xy 104.14 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80d313df-1855-4643-bdbd-537aaeafa4f3")
+	)
+	(wire
+		(pts
+			(xy 200.66 121.92) (xy 208.28 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70637790-27e1-4f3a-a63c-b1b0ceecb59a")
+	)
+	(wire
+		(pts
+			(xy 200.66 127) (xy 208.28 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca8d1b11-23de-405a-814d-86ec65af9058")
+	)
+	(wire
+		(pts
+			(xy 200.66 132.08) (xy 208.28 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "266f0241-0f77-4f6f-b825-455fb1c9017a")
+	)
+	(wire
+		(pts
+			(xy 254 124.46) (xy 261.62 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c192a3f-a4a2-4dc6-b6bc-99797371af00")
+	)
+	(wire
+		(pts
+			(xy 254 129.54) (xy 261.62 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d40d467-b4c7-4087-9ab8-4b95f0178221")
+	)
+	(wire
+		(pts
+			(xy 254 134.62) (xy 261.62 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5be5f5a0-ad79-4b80-a0dc-16314752d631")
+	)
+	(wire
+		(pts
+			(xy 254 139.7) (xy 261.62 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a1522fb-9f72-4b58-b515-41f30f1d0fd6")
+	)
+	(label "AGND"
+		(at 200.66 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b41dfab5-9d34-4d2e-8e2b-c4044e3d232d")
+	)
+	(label "PULSE_OUT"
+		(at 200.66 127 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8ce60742-ae18-4fdb-abd8-f1d65a444d48")
+	)
+	(label "SAW_OUT"
+		(at 200.66 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "01e61cea-23a4-4af8-8e04-92612d53c805")
+	)
+	(label "SYNC_IN"
+		(at 261.62 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5f4fca7d-e55b-4dbf-91c4-e54293cf6c71")
+	)
+	(label "FINE_TUNE"
+		(at 261.62 129.54 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7d11b7d1-69bc-4c01-9f59-d8b8bb58af5c")
+	)
+	(label "COARSE_TUNE"
+		(at 261.62 134.62 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a62114ef-bf8f-4f16-9c89-f989302978f6")
+	)
+	(label "CV_IN"
+		(at 261.62 139.7 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1a2b84ef-ea7c-4f03-b4fd-3cf1ba70f1e5")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,87 @@
+* 70-temp-drift-vco.cir
+* Temperature characterization on the integrated chain.
+* Measure 0 V and +1 V behavior at several temperatures.
+
+.param CV_IN_DC=0
+.param COARSE_V=0
+.param FINE_V=0
+.param TambC=25
+
+.param Ibase=5u
+.param SenseR=100k
+
+.param Kvt=8.617333262145e-5
+.param Vt25={Kvt * (25 + 273.15)}
+.param VtNow={Kvt * (TambC + 273.15)}
+.param ScaleNow={log(2) * (Vt25 / VtNow)}
+
+.param Ctiming=10n
+.param Vtrip=1.0
+.param Vcomp=5
+
+.param CompOn=0.02
+.param CompOff=-0.50
+.param CompVt={(CompOn + CompOff) / 2}
+.param CompVh={(CompOn - CompOff) / 2}
+
+.param ResetRon=0.1
+.param ResetRoff=1e9
+
+Vcv cv_in 0 {CV_IN_DC}
+Bsum tune_sum 0 V = v(cv_in) + {COARSE_V} + {FINE_V}
+
+Bexpo_ramp 0 ramp I = {Ibase * exp(ScaleNow * v(tune_sum))}
+Bexpo_sense 0 expo_out I = {Ibase * exp(ScaleNow * v(tune_sum))}
+Rsense expo_out 0 {SenseR}
+
+Ctiming ramp 0 {Ctiming} ic=0
+Rbleed ramp 0 10Meg
+
+Bthreshold threshold_node 0 V = v(ramp) - {Vtrip}
+
+Vhi hi 0 {Vcomp}
+Rpullcomp reset_ctrl 0 10k
+Scomp hi reset_ctrl threshold_node 0 SWCOMP
+.model SWCOMP SW(Ron=1 Roff=1e9 Vt={CompVt} Vh={CompVh})
+
+Sreset ramp 0 reset_ctrl 0 SWRST
+.model SWRST SW(Ron={ResetRon} Roff={ResetRoff} Vt=2.5 Vh=0.5)
+
+Bsaw saw_out 0 V = v(ramp)
+Bpulse pulse_out 0 V = v(reset_ctrl)
+
+.tran 1u 12m uic maxstep=1u
+
+.control
+set filetype=ascii
+
+* Reference waveform at 25 C, 0 V CV.
+run
+wrdata 70-temp-drift-vco-25c.csv time v(expo_out) v(ramp) v(threshold_node) v(reset_ctrl) v(saw_out)
+
+setplot const
+let temp_vals = unitvec(3)
+let freq_0v = unitvec(3)
+let freq_1v = unitvec(3)
+let octave_ratio = unitvec(3)
+let idx = 0
+foreach tt 0 25 50
+  alterparam TambC = $tt
+  alterparam CV_IN_DC = 0
+  reset
+  run
+  meas tran period0 trig v(reset_ctrl) val=2.5 rise=3 targ v(reset_ctrl) val=2.5 rise=4
+  let freq_0v[$&idx] = 1 / period0
+  alterparam CV_IN_DC = 1
+  reset
+  run
+  meas tran period1 trig v(reset_ctrl) val=2.5 rise=3 targ v(reset_ctrl) val=2.5 rise=4
+  let temp_vals[$&idx] = $tt
+  let freq_1v[$&idx] = 1 / period1
+  let octave_ratio[$&idx] = freq_1v[$&idx] / freq_0v[$&idx]
+  let idx = idx + 1
+end
+print temp_vals freq_0v freq_1v octave_ratio > 70-temp-drift-summary.txt
+.endc
+
+.end

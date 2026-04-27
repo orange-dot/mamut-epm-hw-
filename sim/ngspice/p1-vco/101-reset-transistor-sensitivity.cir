@@ -1,0 +1,124 @@
+* 101-reset-transistor-sensitivity.cir
+* Sweep the transistor reset/discharge side from study 100.
+* Comparator behavior stays fixed; only reset-path knobs move.
+
+.param CV_IN_DC=0
+.param COARSE_V=0
+.param FINE_V=0
+.param TambC=25
+
+.param Ibase=5u
+.param SenseR=100k
+
+.param Kvt=8.617333262145e-5
+.param Vt25={Kvt * (25 + 273.15)}
+.param VtNow={Kvt * (TambC + 273.15)}
+.param ScaleNow={log(2) * (Vt25 / VtNow)}
+
+.param Ctiming=10n
+.param Vtrip=0.90
+.param Vlogic=5
+
+.param Rref=100k
+.param Rhyst=4.7Meg
+.param Rbase=4.7k
+.param Rbe=100k
+.param Creset=33p
+.param CompVh=0.10
+.param Rpull=10k
+.param Rdischarge=330
+.param Remit=22
+
+Vcv cv_in 0 {CV_IN_DC}
+Bsum tune_sum 0 V = v(cv_in) + {COARSE_V} + {FINE_V}
+
+Bexpo_ramp 0 ramp I = {Ibase * exp(ScaleNow * v(tune_sum))}
+Bexpo_sense 0 expo_out I = {Ibase * exp(ScaleNow * v(tune_sum))}
+Rsense expo_out 0 {SenseR}
+
+Ctiming ramp 0 {Ctiming} ic=0
+Rbleed ramp 0 10Meg
+
+Vref reference 0 {Vtrip}
+Rref reference cmp_ref {Rref}
+Rhyst reset_ctrl cmp_ref {Rhyst}
+Rcmp_leak cmp_ref 0 100Meg
+
+Bthreshold threshold_node 0 V = v(ramp) - v(cmp_ref)
+Vlogic_hi logic_hi 0 {Vlogic}
+Rpull reset_ctrl 0 {Rpull}
+Scomp logic_hi reset_ctrl threshold_node 0 SWCOMP
+.model SWCOMP SW(Ron=100 Roff=1e9 Vt=0 Vh={CompVh})
+
+Rbase reset_ctrl qbase {Rbase}
+Rbe qbase 0 {Rbe}
+Creset qbase 0 {Creset}
+Rdischarge ramp qcol {Rdischarge}
+Reemit qemit 0 {Remit}
+Dclamp qbase qcol DFAST
+Qreset qcol qbase qemit QRESET
+
+.model DFAST D(Is=2.52n Rs=0.568 N=1.906 Cjo=1p M=0.03 Eg=1.11 Bv=100 Ibv=0.1u Tt=4n)
+.model QRESET NPN(Is=6.734f Bf=200 Vaf=74 Ikf=0.284 Xtb=1.5 Br=3 Rc=1 Cjc=4.5p Mjc=0.341 Vjc=0.75 Cje=22p Mje=0.377 Vje=0.75 Tr=46.91n Tf=411.1p Itf=0.4 Vtf=4 Xtf=2)
+
+Bsaw saw_out 0 V = v(ramp)
+Bpulse pulse_out 0 V = v(reset_ctrl)
+
+.tran 1u 12m uic maxstep=1u
+
+.control
+set filetype=ascii
+setplot const
+
+let rbase_vals = unitvec(27)
+let rdis_vals = unitvec(27)
+let rbe_vals = unitvec(27)
+let cycle_lows = unitvec(27)
+let cycle_highs = unitvec(27)
+let periods = unitvec(27)
+let freqs = unitvec(27)
+let qbase_highs = unitvec(27)
+let qcol_lows = unitvec(27)
+let stable_flags = unitvec(27)
+let idx = 0
+
+foreach rb 2.2e3 4.7e3 1.0e8
+  foreach rd 220 330 1.0e3
+    foreach rbeval 4.7e4 1.0e5 1.0e6
+      alterparam Rbase = $rb
+      alterparam Rdischarge = $rd
+      alterparam Rbe = $rbeval
+      reset
+      run
+      meas tran cycle_min min v(ramp) from=4m to=12m
+      meas tran cycle_max max v(ramp) from=4m to=12m
+      meas tran period trig v(reset_ctrl) val=2.5 rise=3 targ v(reset_ctrl) val=2.5 rise=4
+      meas tran qbase_high max v(qbase) from=4m to=12m
+      meas tran qcol_low min v(qcol) from=4m to=12m
+
+      let rbase_vals[$&idx] = $rb
+      let rdis_vals[$&idx] = $rd
+      let rbe_vals[$&idx] = $rbeval
+      let cycle_lows[$&idx] = cycle_min
+      let cycle_highs[$&idx] = cycle_max
+      let periods[$&idx] = period
+      let freqs[$&idx] = 1 / period
+      let qbase_highs[$&idx] = qbase_high
+      let qcol_lows[$&idx] = qcol_low
+      let stable_flags[$&idx] = 0
+      if period < 5e-3
+        if period > 1e-6
+          if cycle_max > cycle_min + 5e-2
+            let stable_flags[$&idx] = 1
+          end
+        end
+      end
+      let idx = idx + 1
+    end
+  end
+end
+
+print rbase_vals rdis_vals rbe_vals cycle_lows cycle_highs periods freqs qbase_highs qcol_lows stable_flags > 101-reset-transistor-sensitivity-summary.txt
+.endc
+
+.end

@@ -1,0 +1,132 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "9725dc63-2fb7-41f2-a60e-1117fc5e664c")
+	(paper "A4")
+	(title_block
+		(title "P1 Trim and Test")
+	)
+	(hierarchical_label "REFERENCE"
+		(shape input)
+		(at 22.86 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7aa1afad-7fe1-4019-bf14-e13d45542f2f")
+	)
+	(no_connect
+		(at 22.86 58.42)
+		(uuid "802dc9d8-919f-42e6-886d-e45d9f56a36a")
+	)
+	(hierarchical_label "EXPO_OUT"
+		(shape input)
+		(at 22.86 68.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "802dc9d8-919f-42e6-886d-e45d9f56a369")
+	)
+	(no_connect
+		(at 22.86 68.58)
+		(uuid "879f63bc-95fa-48f3-b9a5-294ef691cdb9")
+	)
+	(hierarchical_label "RAMP_NODE"
+		(shape input)
+		(at 22.86 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "879f63bc-95fa-48f3-b9a5-294ef691cdb8")
+	)
+	(no_connect
+		(at 22.86 78.74)
+		(uuid "6b85618a-675f-4a69-bad6-7e61b10b5bad")
+	)
+	(hierarchical_label "RESET_CTRL"
+		(shape input)
+		(at 22.86 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2c8e23af-5f80-4f6f-bca0-2f979bb1b001")
+	)
+	(no_connect
+		(at 22.86 88.9)
+		(uuid "2c8e23af-5f80-4f6f-bca0-2f979bb1b002")
+	)
+	(hierarchical_label "THRESHOLD_NODE"
+		(shape input)
+		(at 177.8 58.42 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6b85618a-675f-4a69-bad6-7e61b10b5bac")
+	)
+	(no_connect
+		(at 177.8 58.42)
+		(uuid "63d2a1f9-40df-42c7-ae0a-fb36df32ed0a")
+	)
+	(hierarchical_label "SAW_OUT"
+		(shape input)
+		(at 177.8 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "63d2a1f9-40df-42c7-ae0a-fb36df32ed09")
+	)
+	(no_connect
+		(at 177.8 68.58)
+		(uuid "1025af24-cf51-4126-9726-c5f535f4d420")
+	)
+	(hierarchical_label "PULSE_OUT"
+		(shape input)
+		(at 177.8 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1025af24-cf51-4126-9726-c5f535f4d41f")
+	)
+	(no_connect
+		(at 177.8 78.74)
+		(uuid "c40c516d-a5d8-4339-aad6-a7524623bace")
+	)
+	(text "Reserved P1 measurement and calibration anchors.\nMinimum expected trims later: scale trim, offset trim, high-frequency trim.\nMinimum expected test points: reference, expo current node proxy, ramp, threshold, reset control, saw, pulse."
+		(exclude_from_sim no)
+		(at 40.64 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c40c516d-a5d8-4339-aad6-a7524623bacd")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

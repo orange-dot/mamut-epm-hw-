@@ -1,0 +1,96 @@
+* 91-threshold-reset-window-sweep.cir
+* Sweep the new threshold/reset realism block across hysteresis and drive settings.
+
+.param CV_IN_DC=0
+.param COARSE_V=0
+.param FINE_V=0
+.param TambC=25
+
+.param Ibase=5u
+.param SenseR=100k
+
+.param Kvt=8.617333262145e-5
+.param Vt25={Kvt * (25 + 273.15)}
+.param VtNow={Kvt * (TambC + 273.15)}
+.param ScaleNow={log(2) * (Vt25 / VtNow)}
+
+.param Ctiming=10n
+.param Vtrip=0.90
+.param Vlogic=5
+
+.param Rref=100k
+.param Rhyst=2.2Meg
+.param Rbase=4.7k
+.param Rbe=100k
+.param Creset=22p
+.param CompVh=0.10
+
+Vcv cv_in 0 {CV_IN_DC}
+Bsum tune_sum 0 V = v(cv_in) + {COARSE_V} + {FINE_V}
+
+Bexpo_ramp 0 ramp I = {Ibase * exp(ScaleNow * v(tune_sum))}
+Bexpo_sense 0 expo_out I = {Ibase * exp(ScaleNow * v(tune_sum))}
+Rsense expo_out 0 {SenseR}
+
+Ctiming ramp 0 {Ctiming} ic=0
+Rbleed ramp 0 10Meg
+
+Vref reference 0 {Vtrip}
+Rref reference cmp_ref {Rref}
+Rhyst reset_ctrl cmp_ref {Rhyst}
+Rcmp_leak cmp_ref 0 100Meg
+
+Bthreshold threshold_node 0 V = v(ramp) - v(cmp_ref)
+Vlogic_hi logic_hi 0 {Vlogic}
+Rpull reset_ctrl 0 10k
+Scomp logic_hi reset_ctrl threshold_node 0 SWCOMP
+.model SWCOMP SW(Ron=100 Roff=1e9 Vt=0 Vh={CompVh})
+
+Rbase reset_ctrl qbase {Rbase}
+Rbe qbase 0 {Rbe}
+Creset qbase 0 {Creset}
+Rdischarge ramp qcol 330
+Qreset qcol qbase 0 QRESET
+
+.model QRESET NPN(Is=6.734f Bf=200 Vaf=74 Ikf=0.284 Xtb=1.5 Br=3 Rc=1 Cjc=4.5p Mjc=0.341 Vjc=0.75 Cje=22p Mje=0.377 Vje=0.75 Tr=46.91n Tf=411.1p Itf=0.4 Vtf=4 Xtf=2)
+
+Bsaw saw_out 0 V = v(ramp)
+Bpulse pulse_out 0 V = v(reset_ctrl)
+
+.tran 1u 12m uic maxstep=1u
+
+.control
+set filetype=ascii
+setplot const
+
+let rhyst_vals = unitvec(9)
+let rbase_vals = unitvec(9)
+let cycle_lows = unitvec(9)
+let cycle_highs = unitvec(9)
+let periods = unitvec(9)
+let freqs = unitvec(9)
+let idx = 0
+
+foreach rh 1e6 2.2e6 4.7e6
+  foreach rb 2.2e3 4.7e3 1e4
+    alterparam Rhyst = $rh
+    alterparam Rbase = $rb
+    reset
+    run
+    meas tran cycle_min min v(ramp) from=4m to=12m
+    meas tran cycle_max max v(ramp) from=4m to=12m
+    meas tran period trig v(reset_ctrl) val=2.5 rise=3 targ v(reset_ctrl) val=2.5 rise=4
+    let rhyst_vals[$&idx] = $rh
+    let rbase_vals[$&idx] = $rb
+    let cycle_lows[$&idx] = cycle_min
+    let cycle_highs[$&idx] = cycle_max
+    let periods[$&idx] = period
+    let freqs[$&idx] = 1 / period
+    let idx = idx + 1
+  end
+end
+
+print rhyst_vals rbase_vals cycle_lows cycle_highs periods freqs > 91-threshold-reset-window-sweep-summary.txt
+.endc
+
+.end

@@ -1,0 +1,56 @@
+* 30-comparator-driven-reset-core.cir
+* First trustworthy self-running core study:
+* a threshold detector drives a saturated reset control node,
+* and a separate reset switch discharges the timing capacitor.
+
+.param Ichg=100u
+.param Ctiming=10n
+.param Vtrip=1.0
+.param Vcomp=5
+
+* Comparator window:
+* turn on when threshold exceeds +20 mV,
+* turn off only after the ramp has been pulled well below threshold.
+.param CompOn=0.02
+.param CompOff=-0.50
+.param CompVt={(CompOn + CompOff) / 2}
+.param CompVh={(CompOn - CompOff) / 2}
+
+.param ResetRon=0.1
+.param ResetRoff=1e9
+
+* Constant current charges the timing capacitor.
+Icharge ramp 0 DC {-Ichg}
+Ctiming ramp 0 {Ctiming} ic=0
+Rbleed ramp 0 10Meg
+
+* Threshold node is separated from the reset driver.
+Bthreshold threshold_node 0 V = v(ramp) - {Vtrip}
+
+* Comparator output is modeled as a latched switch between 0 V and 5 V.
+Vhi hi 0 {Vcomp}
+Rpullcomp reset_ctrl 0 10k
+Scomp hi reset_ctrl threshold_node 0 SWCOMP
+.model SWCOMP SW(Ron=1 Roff=1e9 Vt={CompVt} Vh={CompVh})
+
+* Reset switch is a separate element controlled by reset_ctrl.
+Sreset ramp 0 reset_ctrl 0 SWRST
+.model SWRST SW(Ron={ResetRon} Roff={ResetRoff} Vt=2.5 Vh=0.5)
+
+Bsaw saw_out 0 V = v(ramp)
+Bpulse pulse_out 0 V = v(reset_ctrl)
+
+.tran 100n 0.5m uic maxstep=100n
+
+.control
+set filetype=ascii
+run
+wrdata 30-comparator-driven-reset-core.csv time v(ramp) v(threshold_node) v(reset_ctrl) v(saw_out) v(pulse_out)
+meas tran cycle_min min v(ramp) from=0.15m to=0.5m
+meas tran cycle_max max v(ramp) from=0.15m to=0.5m
+meas tran period trig v(reset_ctrl) val=2.5 rise=3 targ v(reset_ctrl) val=2.5 rise=4
+meas tran reset_peak max v(reset_ctrl) from=0.15m to=0.5m
+print v(ramp) v(threshold_node) v(reset_ctrl) > 30-comparator-driven-reset-core.txt
+.endc
+
+.end

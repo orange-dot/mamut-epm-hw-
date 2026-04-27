@@ -1,0 +1,48 @@
+ERC report (2026-04-11T16:24:21+0200, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[label_dangling]: Label not connected to anything
+    ; error
+    @(22.86 mm, 58.42 mm): Hierarchical Label 'REFERENCE'
+[pin_not_connected]: Hierarchical label "REFERENCE" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(22.86 mm, 58.42 mm): Hierarchical Label 'REFERENCE'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(22.86 mm, 68.58 mm): Hierarchical Label 'EXPO_OUT'
+[pin_not_connected]: Hierarchical label "EXPO_OUT" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(22.86 mm, 68.58 mm): Hierarchical Label 'EXPO_OUT'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(22.86 mm, 78.74 mm): Hierarchical Label 'RAMP_NODE'
+[pin_not_connected]: Hierarchical label "RAMP_NODE" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(22.86 mm, 78.74 mm): Hierarchical Label 'RAMP_NODE'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(22.86 mm, 88.90 mm): Hierarchical Label 'RESET_CTRL'
+[pin_not_connected]: Hierarchical label "RESET_CTRL" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(22.86 mm, 88.90 mm): Hierarchical Label 'RESET_CTRL'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(177.80 mm, 58.42 mm): Hierarchical Label 'THRESHOLD_NODE'
+[pin_not_connected]: Hierarchical label "THRESHOLD_NODE" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(177.80 mm, 58.42 mm): Hierarchical Label 'THRESHOLD_NODE'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(177.80 mm, 68.58 mm): Hierarchical Label 'SAW_OUT'
+[pin_not_connected]: Hierarchical label "SAW_OUT" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(177.80 mm, 68.58 mm): Hierarchical Label 'SAW_OUT'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(177.80 mm, 78.74 mm): Hierarchical Label 'PULSE_OUT'
+[pin_not_connected]: Hierarchical label "PULSE_OUT" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(177.80 mm, 78.74 mm): Hierarchical Label 'PULSE_OUT'
+
+ ** ERC messages: 14  Errors 14  Warnings 0

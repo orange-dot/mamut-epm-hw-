@@ -1,0 +1,37 @@
+* 50-standalone-expo-transfer.cir
+* Standalone exponential transfer study:
+* tune_sum drives a current-domain output proxy without any oscillator core attached.
+
+.param CV_IN_DC=0
+.param COARSE_V=0
+.param FINE_V=0
+.param TambC=25
+
+.param Ibase=5u
+.param SenseR=100k
+
+.param Kvt=8.617333262145e-5
+.param Vt25={Kvt * (25 + 273.15)}
+.param VtNow={Kvt * (TambC + 273.15)}
+.param ScaleNow={log(2) * (Vt25 / VtNow)}
+
+Vcv cv_in 0 {CV_IN_DC}
+Bsum tune_sum 0 V = v(cv_in) + {COARSE_V} + {FINE_V}
+
+* Sense current through a resistor so we get a readable voltage-domain proxy.
+Bexpo 0 expo_out I = {Ibase * exp(ScaleNow * v(tune_sum))}
+Rsense expo_out 0 {SenseR}
+
+.dc Vcv -1 2 0.25
+
+.control
+set filetype=ascii
+run
+wrdata 50-standalone-expo-transfer.csv v(cv_in) v(tune_sum) v(expo_out)
+print v(cv_in) v(tune_sum) v(expo_out) > 50-standalone-expo-transfer.txt
+meas dc expo_zero find v(expo_out) at=0
+meas dc expo_plus1 find v(expo_out) at=1
+meas dc expo_plus2 find v(expo_out) at=2
+.endc
+
+.end

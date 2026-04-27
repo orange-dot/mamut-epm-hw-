@@ -1,0 +1,39 @@
+* 20-threshold-reset-core.cir
+* First self-running core study:
+* a timing capacitor ramps until a threshold closes a reset switch,
+* then the node discharges and the cycle begins again.
+
+.param Ichg=100u
+.param Ctiming=10n
+.param Vtrip=1.0
+.param Vhyst=0.05
+.param Ron=5
+.param Roff=1e9
+
+* Constant current charges the timing capacitor.
+Icharge ramp 0 DC {-Ichg}
+Ctiming ramp 0 {Ctiming} ic=0
+
+* This node helps visualize the threshold relation directly.
+Bthreshold threshold 0 V = v(ramp)-{Vtrip}
+
+* The ramp node controls its own reset through a hysteretic switch model.
+Sreset ramp 0 ramp 0 SWRST
+.model SWRST SW(Ron={Ron} Roff={Roff} Vt={Vtrip} Vh={Vhyst})
+
+* Small bleed path keeps the node well-defined.
+Rbleed ramp 0 10Meg
+
+.tran 100n 5m uic
+
+.control
+set filetype=ascii
+run
+wrdata 20-threshold-reset-core.csv time v(ramp) v(threshold)
+meas tran ramp_min min v(ramp)
+meas tran ramp_max max v(ramp)
+meas tran period trig v(ramp) val=0.2 rise=2 targ v(ramp) val=0.2 rise=3
+print v(ramp) v(threshold)
+.endc
+
+.end

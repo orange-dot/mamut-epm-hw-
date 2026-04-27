@@ -1,0 +1,103 @@
+* 100-threshold-reset-transistor-core.cir
+* First serious transistor-level reset/discharge study.
+* Keep the threshold decision idealized enough to preserve a clean benchmark,
+* but make the reset side more bench-truthful than 90.
+
+.param CV_IN_DC=0
+.param COARSE_V=0
+.param FINE_V=0
+.param TambC=25
+
+.param Ibase=5u
+.param SenseR=100k
+
+.param Kvt=8.617333262145e-5
+.param Vt25={Kvt * (25 + 273.15)}
+.param VtNow={Kvt * (TambC + 273.15)}
+.param ScaleNow={log(2) * (Vt25 / VtNow)}
+
+.param Ctiming=10n
+.param Vtrip=0.90
+.param Vlogic=5
+
+.param Rref=100k
+.param Rhyst=4.7Meg
+.param Rbase=4.7k
+.param Rbe=100k
+.param Creset=33p
+.param CompVh=0.10
+.param Rpull=10k
+.param Rdischarge=330
+.param Remit=22
+
+.param Ref90Period=3.923480e-04
+.param Ref90Low=7.876297e-01
+.param Ref90High=9.805283e-01
+
+Vcv cv_in 0 {CV_IN_DC}
+Bsum tune_sum 0 V = v(cv_in) + {COARSE_V} + {FINE_V}
+
+Bexpo_ramp 0 ramp I = {Ibase * exp(ScaleNow * v(tune_sum))}
+Bexpo_sense 0 expo_out I = {Ibase * exp(ScaleNow * v(tune_sum))}
+Rsense expo_out 0 {SenseR}
+
+Ctiming ramp 0 {Ctiming} ic=0
+Rbleed ramp 0 10Meg
+
+Vref reference 0 {Vtrip}
+Rref reference cmp_ref {Rref}
+Rhyst reset_ctrl cmp_ref {Rhyst}
+Rcmp_leak cmp_ref 0 100Meg
+
+Bthreshold threshold_node 0 V = v(ramp) - v(cmp_ref)
+
+* Keep the comparator decision idealized for this round.
+Vlogic_hi logic_hi 0 {Vlogic}
+Rpull reset_ctrl 0 {Rpull}
+Scomp logic_hi reset_ctrl threshold_node 0 SWCOMP
+.model SWCOMP SW(Ron=100 Roff=1e9 Vt=0 Vh={CompVh})
+
+* The discharge path is now the real teaching target.
+Rbase reset_ctrl qbase {Rbase}
+Rbe qbase 0 {Rbe}
+Creset qbase 0 {Creset}
+Rdischarge ramp qcol {Rdischarge}
+Reemit qemit 0 {Remit}
+Dclamp qbase qcol DFAST
+Qreset qcol qbase qemit QRESET
+
+.model DFAST D(Is=2.52n Rs=0.568 N=1.906 Cjo=1p M=0.03 Eg=1.11 Bv=100 Ibv=0.1u Tt=4n)
+.model QRESET NPN(Is=6.734f Bf=200 Vaf=74 Ikf=0.284 Xtb=1.5 Br=3 Rc=1 Cjc=4.5p Mjc=0.341 Vjc=0.75 Cje=22p Mje=0.377 Vje=0.75 Tr=46.91n Tf=411.1p Itf=0.4 Vtf=4 Xtf=2)
+
+Bsaw saw_out 0 V = v(ramp)
+Bpulse pulse_out 0 V = v(reset_ctrl)
+
+.tran 1u 12m uic maxstep=1u
+
+.control
+set filetype=ascii
+
+run
+wrdata 100-threshold-reset-transistor-core.csv time v(tune_sum) v(expo_out) v(cmp_ref) v(ramp) v(threshold_node) v(reset_ctrl) v(qbase) v(qcol) v(qemit) v(saw_out) v(pulse_out)
+
+meas tran cycle_min min v(ramp) from=4m to=12m
+meas tran cycle_max max v(ramp) from=4m to=12m
+meas tran nominal_period trig v(reset_ctrl) val=2.5 rise=3 targ v(reset_ctrl) val=2.5 rise=4
+meas tran reset_high max v(reset_ctrl) from=4m to=12m
+meas tran qbase_high max v(qbase) from=4m to=12m
+meas tran qcol_low min v(qcol) from=4m to=12m
+meas tran threshold_low min v(threshold_node) from=4m to=12m
+meas tran threshold_high max v(threshold_node) from=4m to=12m
+
+let ref90_period = 3.923480e-04
+let ref90_low = 7.876297e-01
+let ref90_high = 9.805283e-01
+let period_ratio_vs_90 = nominal_period / ref90_period
+let low_delta_vs_90 = cycle_min - ref90_low
+let high_delta_vs_90 = cycle_max - ref90_high
+let freq_nominal = 1 / nominal_period
+
+print cycle_min cycle_max nominal_period freq_nominal reset_high qbase_high qcol_low threshold_low threshold_high ref90_period ref90_low ref90_high period_ratio_vs_90 low_delta_vs_90 high_delta_vs_90 > 100-threshold-reset-transistor-core-summary.txt
+.endc
+
+.end

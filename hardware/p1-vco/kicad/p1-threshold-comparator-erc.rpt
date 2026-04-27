@@ -1,0 +1,72 @@
+ERC report (2026-04-11T19:43:05+0200, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[label_dangling]: Label not connected to anything
+    ; error
+    @(15.24 mm, 25.40 mm): Hierarchical Label 'PLUS12'
+[pin_not_connected]: Hierarchical label "PLUS12" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(15.24 mm, 25.40 mm): Hierarchical Label 'PLUS12'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(15.24 mm, 35.56 mm): Hierarchical Label 'MINUS12'
+[pin_not_connected]: Hierarchical label "MINUS12" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(15.24 mm, 35.56 mm): Hierarchical Label 'MINUS12'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(15.24 mm, 45.72 mm): Hierarchical Label 'AGND'
+[pin_not_connected]: Hierarchical label "AGND" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(15.24 mm, 45.72 mm): Hierarchical Label 'AGND'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(15.24 mm, 63.50 mm): Hierarchical Label 'REFERENCE'
+[pin_not_connected]: Hierarchical label "REFERENCE" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(15.24 mm, 63.50 mm): Hierarchical Label 'REFERENCE'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(15.24 mm, 78.74 mm): Hierarchical Label 'RAMP_NODE'
+[pin_not_connected]: Hierarchical label "RAMP_NODE" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(15.24 mm, 78.74 mm): Hierarchical Label 'RAMP_NODE'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(15.24 mm, 86.36 mm): Hierarchical Label 'SYNC_IN'
+[pin_not_connected]: Hierarchical label "SYNC_IN" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(15.24 mm, 86.36 mm): Hierarchical Label 'SYNC_IN'
+[pin_not_driven]: Input pin not driven by any Output pins
+    ; error
+    @(88.90 mm, 73.66 mm): Symbol U1 Pin 3 [-, Input, Line]
+[label_dangling]: Label not connected to anything
+    ; error
+    @(190.50 mm, 63.50 mm): Hierarchical Label 'THRESHOLD_NODE'
+[pin_not_connected]: Hierarchical label "THRESHOLD_NODE" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(190.50 mm, 63.50 mm): Hierarchical Label 'THRESHOLD_NODE'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(190.50 mm, 78.74 mm): Hierarchical Label 'RESET_CTRL'
+[pin_not_connected]: Hierarchical label "RESET_CTRL" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(190.50 mm, 78.74 mm): Hierarchical Label 'RESET_CTRL'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(190.50 mm, 96.52 mm): Hierarchical Label 'PULSE_OUT'
+[pin_not_connected]: Hierarchical label "PULSE_OUT" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(190.50 mm, 96.52 mm): Hierarchical Label 'PULSE_OUT'
+[unconnected_wire_endpoint]: Unconnected wire endpoint
+    ; warning
+    @(91.44 mm, 63.50 mm): Horizontal Wire, length 2.54 mm
+[lib_symbol_mismatch]: Symbol 'LM311' doesn't match copy in library 'Comparator'
+    ; warning
+    @(96.52 mm, 71.12 mm): Symbol U1 [LM311]
+[unconnected_wire_endpoint]: Unconnected wire endpoint
+    ; warning
+    @(91.44 mm, 78.74 mm): Horizontal Wire, length 2.54 mm
+
+ ** ERC messages: 22  Errors 19  Warnings 3

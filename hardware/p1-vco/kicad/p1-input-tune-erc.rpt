@@ -1,0 +1,45 @@
+ERC report (2026-04-11T19:54:30+0200, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[label_dangling]: Label not connected to anything
+    ; error
+    @(22.86 mm, 60.96 mm): Hierarchical Label 'CV_IN'
+[pin_not_connected]: Hierarchical label "CV_IN" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(22.86 mm, 60.96 mm): Hierarchical Label 'CV_IN'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(22.86 mm, 71.12 mm): Hierarchical Label 'COARSE_TUNE'
+[pin_not_connected]: Hierarchical label "COARSE_TUNE" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(22.86 mm, 71.12 mm): Hierarchical Label 'COARSE_TUNE'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(22.86 mm, 81.28 mm): Hierarchical Label 'FINE_TUNE'
+[pin_not_connected]: Hierarchical label "FINE_TUNE" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(22.86 mm, 81.28 mm): Hierarchical Label 'FINE_TUNE'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(22.86 mm, 91.44 mm): Hierarchical Label 'AGND'
+[pin_not_connected]: Hierarchical label "AGND" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(22.86 mm, 91.44 mm): Hierarchical Label 'AGND'
+[pin_not_connected]: Hierarchical label "TUNE_SUM" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(177.80 mm, 71.12 mm): Hierarchical Label 'TUNE_SUM'
+[lib_symbol_mismatch]: Symbol 'R' doesn't match copy in library 'Device'
+    ; warning
+    @(48.26 mm, 60.96 mm): Symbol R40 [R]
+[lib_symbol_mismatch]: Symbol 'R' doesn't match copy in library 'Device'
+    ; warning
+    @(63.50 mm, 71.12 mm): Symbol R41 [R]
+[lib_symbol_mismatch]: Symbol 'R' doesn't match copy in library 'Device'
+    ; warning
+    @(78.74 mm, 81.28 mm): Symbol R42 [R]
+[lib_symbol_mismatch]: Symbol 'R' doesn't match copy in library 'Device'
+    ; warning
+    @(109.22 mm, 86.36 mm): Symbol R43 [R]
+
+ ** ERC messages: 13  Errors 9  Warnings 4

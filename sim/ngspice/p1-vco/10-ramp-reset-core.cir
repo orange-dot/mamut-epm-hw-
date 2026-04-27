@@ -1,0 +1,31 @@
+* 10-ramp-reset-core.cir
+* First synth-relevant study: idealized current-charged timing capacitor
+* with forced reset to visualize the heart of a saw-like oscillator.
+
+.param Ichg=100u
+.param Ctiming=10n
+.param Tperiod=1m
+.param Treset=5u
+
+* Constant current charges the timing capacitor.
+Icharge ramp 0 DC {-Ichg}
+Ctiming ramp 0 {Ctiming} ic=0
+
+* A periodic control pulse closes the reset switch briefly.
+Vreset ctrl 0 PULSE(5 0 0 100n 100n {Treset} {Tperiod})
+Sreset ramp 0 ctrl 0 SWRST
+.model SWRST SW(Ron=2 Roff=1e9 Vt=2.5 Vh=0.5)
+
+* Small load so the node is not completely ideal.
+Rbleed ramp 0 10Meg
+
+.tran 100n 5m uic
+
+.control
+set filetype=ascii
+run
+wrdata 10-ramp-reset-core.csv time v(ramp) v(ctrl)
+print v(ramp) v(ctrl)
+.endc
+
+.end

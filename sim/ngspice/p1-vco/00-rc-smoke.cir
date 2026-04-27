@@ -1,0 +1,18 @@
+* 00-rc-smoke.cir
+* Basic ngspice smoke test for the Mamut workspace.
+
+V1 in 0 PULSE(0 5 0 1u 1u 5m 10m)
+R1 in out 10k
+C1 out 0 10u
+
+.tran 50u 30m
+
+.control
+set filetype=ascii
+run
+wrdata 00-rc-smoke.csv time v(in) v(out)
+print v(in) v(out)
+.endc
+
+.end
+

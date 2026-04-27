@@ -1,0 +1,15 @@
+cycle_min = 8.637955e-01
+cycle_max = 9.806620e-01
+nominal_period = 2.384692e-04
+freq_nominal = 4.193414e+03
+reset_high = 4.864286e+00
+qbase_high = 7.758227e-01
+qcol_low = 1.408456e-01
+threshold_low = -8.69914e-02
+threshold_high = 9.999035e-02
+ref90_period = 3.923480e-04
+ref90_low = 7.876297e-01
+ref90_high = 9.805283e-01
+period_ratio_vs_90 = 6.078002e-01
+low_delta_vs_90 = 7.616580e-02
+high_delta_vs_90 = 1.337000e-04

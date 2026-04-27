@@ -1,0 +1,30 @@
+ERC report (2026-04-11T17:48:32+0200, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[label_dangling]: Label not connected to anything
+    ; error
+    @(15.24 mm, 30.48 mm): Hierarchical Label 'RESET_CTRL'
+[pin_not_connected]: Hierarchical label "RESET_CTRL" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(15.24 mm, 30.48 mm): Hierarchical Label 'RESET_CTRL'
+[pin_not_connected]: Hierarchical label "AGND" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(15.24 mm, 38.10 mm): Hierarchical Label 'AGND'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(40.64 mm, 26.67 mm): Label 'RESET_CTRL'
+[pin_not_connected]: Hierarchical label "RAMP_NODE" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(15.24 mm, 55.88 mm): Hierarchical Label 'RAMP_NODE'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(165.10 mm, 52.07 mm): Label 'SAW_OUT'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(190.50 mm, 55.88 mm): Hierarchical Label 'SAW_OUT'
+[pin_not_connected]: Hierarchical label "SAW_OUT" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(190.50 mm, 55.88 mm): Hierarchical Label 'SAW_OUT'
+
+ ** ERC messages: 8  Errors 8  Warnings 0
