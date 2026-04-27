@@ -150,7 +150,7 @@ What to learn:
 
 Purpose:
 
-- build one serious oscillator
+- build the first oscillator block
 - learn pitch behavior, drift, wave generation, and reset behavior
 
 What to build:
@@ -311,7 +311,7 @@ That is usually the start of the real lesson.
 The best next physical step is:
 
 1. finish `P0` if power and measurement are not yet disciplined
-2. build `P1` as one serious discrete VCO
+2. build `P1` as the first discrete VCO
 3. use that as the foundation for the later `Baklja` lab
 
 This keeps the project honest.

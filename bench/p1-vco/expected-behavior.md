@@ -121,5 +121,5 @@ Fill after measurement:
   - the current chain does not yet model a hardware reference block
   - temperature behavior is intentionally uncompensated and bends strongly
 - what changed next:
-  - next serious pass should choose behavioral vs transistor-level expo
+  - next pass should choose behavioral vs transistor-level expo
   - stabilized blocks can now be promoted into more detailed KiCad capture

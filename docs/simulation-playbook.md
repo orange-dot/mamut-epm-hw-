@@ -28,7 +28,7 @@ The current best-practice split is:
 - bench work third, only after the study has taught something concrete
 
 This means we do not force every early idea into a `KiCad` schematic too soon.
-For `P1`, the serious learning happens first in text netlists and controlled studies.
+For `P1`, the mechanism learning happens first in text netlists and controlled studies.
 
 ## Why This Stack
 
@@ -166,7 +166,7 @@ For `P1`, the locked names are:
 - `SAW_OUT`
 - `PULSE_OUT`
 
-Every serious prototype should also reserve matching test points.
+Every bench prototype should also reserve matching test points.
 
 ## Study Artifacts
 
@@ -184,7 +184,7 @@ That is the minimum record of learning.
 For now:
 
 - `KiCad + ngspice` is the default simulation environment
-- terminal `ngspice` is the serious experiment environment
+- terminal `ngspice` is the main experiment environment
 - everything else is optional and later
 
 That is the current playbook.

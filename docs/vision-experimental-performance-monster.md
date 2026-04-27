@@ -26,7 +26,7 @@ This is not:
 
 This is:
 
-- a serious playable synth
+- a playable synth
 - with dangerous range
 - with strong macro behavior
 - with analog weight
@@ -190,7 +190,7 @@ The guiding tonal trajectory is now:
 
 ## Role Of The PC4
 
-The `Kurzweil PC4` gives us an immediate serious performance front end.
+The `Kurzweil PC4` gives us an immediate performance front end.
 
 That means:
 

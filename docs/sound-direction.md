@@ -33,7 +33,7 @@ It should feel like:
 - headroom
 - dark elegance
 
-It is not meant to be nostalgic or soft. It is meant to feel physically vast and serious, like you are hearing the edge of something too large to hold.
+It is not meant to be nostalgic or soft. It is meant to feel physically large and controlled, like you are hearing the edge of something too large to hold.
 
 Typical emotional read:
 

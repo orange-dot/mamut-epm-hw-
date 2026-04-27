@@ -146,11 +146,11 @@ This is a major part of the synth's identity and may eventually shape both the a
 
 ### Instrument, not compliance exercise
 
-Every major technical decision should be judged by whether it makes the synth more worth hearing and playing.
+Every major technical decision should be judged by whether it makes the synth clearer, more playable, and easier to evaluate.
 
 ### Character first
 
-The synth should not be reduced to a safe architecture because that is easier to explain. If a bolder choice gives the instrument a stronger voice, it deserves serious consideration.
+The synth should not be reduced to a safe architecture because that is easier to explain. If a bolder choice gives the instrument a clearer role, it should be tested against the evidence.
 
 ### Direct panel over abstract flexibility
 

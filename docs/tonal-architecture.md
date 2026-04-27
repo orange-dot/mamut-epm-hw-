@@ -280,7 +280,7 @@ without breaking the identity of the instrument.
 
 ## Implementation Priority For V1
 
-The first serious implementation should aim for:
+The first implementation should aim for:
 
 ### Horizont
 

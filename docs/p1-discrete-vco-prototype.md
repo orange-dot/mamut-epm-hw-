@@ -2,7 +2,7 @@
 
 ## Purpose
 
-`P1` is the first serious learning prototype for `Mamut`.
+`P1` is the first learning prototype for `Mamut`.
 
 It is not a full synth voice.
 It is not the fastest path to a demo.
@@ -22,7 +22,7 @@ A bad oscillator poisons:
 
 So the first commitment is:
 
-- build one VCO worth listening to
+- build one VCO that can be measured and evaluated
 - measure it properly
 - understand why it behaves the way it does
 

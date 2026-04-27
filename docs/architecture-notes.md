@@ -17,7 +17,7 @@ The current architectural direction is:
 - external MIDI keyboard/controller
 - desktop chassis
 
-This is the most practical way to build a first serious polysynth.
+This is the most practical way to build a first desktop polysynth.
 
 This split is not meant to force the synth into a conservative box. It is just the current best way to make an ambitious instrument without wasting energy on the wrong problems.
 
@@ -87,7 +87,7 @@ There are now two different questions here and they should not be confused.
 For the immediate learning prototypes, the chosen direction is:
 
 - discrete analog studies first
-- begin with one serious VCO
+- begin with one VCO study
 - understand drift, scaling, sync, and spectral behavior directly
 
 This is the intentionally more painful path because the point is to learn the voice, not to skip to control integration.

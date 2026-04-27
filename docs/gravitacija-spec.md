@@ -380,7 +380,7 @@ If it does, the concept has failed.
 
 ## Minimum Viable V1 Mapping
 
-For the first serious implementation pass, the recommended V1 mapping is:
+For the first implementation pass, the recommended V1 mapping is:
 
 - oscillator mix weight
 - sub emphasis

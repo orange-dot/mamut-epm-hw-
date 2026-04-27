@@ -23,7 +23,7 @@ This is the first place where `KiCad` can stop being a placeholder and start bei
 
 ## Sheet Role
 
-The `p1-threshold-comparator.kicad_sch` and `p1-reset-output.kicad_sch` sheets should become the first serious detailed sheets.
+The `p1-threshold-comparator.kicad_sch` and `p1-reset-output.kicad_sch` sheets should become the first detailed sheets.
 
 Their combined purpose is:
 

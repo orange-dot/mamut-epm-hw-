@@ -267,7 +267,7 @@ Role:
 
 ## Recommended V1 Distribution
 
-For the first serious implementation:
+For the first implementation:
 
 - primary rupture source should be pre-filter sync behavior
 - secondary poison source should be crossmod bleed
