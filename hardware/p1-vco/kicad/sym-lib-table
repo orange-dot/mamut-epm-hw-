@@ -1,4 +1,8 @@
 (sym_lib_table
   (version 7)
+  (lib (name "Connector")(type "KiCad")(uri "${KICAD10_SYMBOL_DIR}/Connector.kicad_sym")(options "")(descr "Connector symbols used by P1 VCO bench test points"))
+  (lib (name "Connector_Generic")(type "KiCad")(uri "${KICAD10_SYMBOL_DIR}/Connector_Generic.kicad_sym")(options "")(descr "Generic connector symbols used by P1 VCO bench headers"))
+  (lib (name "Device")(type "KiCad")(uri "${KICAD10_SYMBOL_DIR}/Device.kicad_sym")(options "")(descr "Generic device symbols used by the P1 VCO capture"))
   (lib (name "mamut-p1-vco")(type "KiCad")(uri "${KIPRJMOD}/mamut-p1-vco.kicad_sym")(options "")(descr "Project-local symbols for the P1 VCO capture"))
+  (lib (name "Transistor_BJT")(type "KiCad")(uri "${KICAD10_SYMBOL_DIR}/Transistor_BJT.kicad_sym")(options "")(descr "BJT symbols used by the P1 VCO transistor studies"))
 )
