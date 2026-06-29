@@ -120,6 +120,30 @@ The current post-simulation reference docs are:
 - `docs/p1-step-2-model-boundary.md`
 - `docs/p1-step-3-threshold-reset-capture.md`
 
+## `P1D` Full-Discrete Branch
+
+`P1D` follows the same evidence discipline as `P1`, but has a stricter
+component rule:
+
+- no op-amps
+- no IC comparators
+- no logic ICs
+- no microcontrollers
+- no regulator/reference ICs on the oscillator board
+
+The recommended `P1D` study ladder is:
+
+1. `P1D-00` - copy the current `P1` reference measurements
+2. `P1D-10` - replace only the saw buffer
+3. `P1D-20` - replace only the comparator/threshold detector
+4. `P1D-30` - close the loop with discrete comparator and reset pocket
+5. `P1D-40` - bring the transistor expo path into the loop
+6. `P1D-50` - add sync/reset injection after free-run behavior is understood
+
+See:
+
+- `docs/p1d-full-discrete-vco-line.md`
+
 ## Naming Contract
 
 The following names are locked for `P1` and must stay consistent across:

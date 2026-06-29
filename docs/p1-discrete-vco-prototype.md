@@ -45,6 +45,23 @@ This means:
 
 The core learning target is the oscillator behavior itself.
 
+## Full-Discrete Learning Branch
+
+There is now a stricter branch named `P1D`.
+
+`P1D` keeps the same saw-core learning target, but removes the utility ICs:
+
+- no `LM311`
+- no `TL071`
+- no other IC shortcuts on the oscillator board
+
+Use `P1D` when the goal is to understand what the comparator and buffer were
+hiding, not when the goal is the quickest stable oscillator.
+
+See:
+
+- `docs/p1d-full-discrete-vco-line.md`
+
 ## Recommended Core Topology
 
 For `P1`, the current recommendation is:

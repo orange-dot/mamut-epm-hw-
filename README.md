@@ -16,6 +16,8 @@ The useful source trail is:
   integrated VCO behavior and transistor reset sensitivity
 - `docs/p1-vco-simulation-notes.md` - current simulation interpretation and
   result summaries
+- `docs/p1d-full-discrete-vco-line.md` - full-discrete `P1D` branch for
+  learning the oscillator without utility ICs
 - `hardware/p1-vco/kicad/` - hierarchical KiCad capture for the promoted P1
   blocks
 - `bench/p1-vco/expected-behavior.md` - bench-side expectations before
@@ -30,6 +32,8 @@ The useful source trail is:
 - `100-threshold-reset-transistor-core.cir` and
   `101-reset-transistor-sensitivity.cir` move the reset path into a more
   bench-facing transistor study.
+- `P1D` is now the full-discrete learning branch: same saw-core goal, but no
+  `LM311`, no `TL071`, and no other utility ICs on the oscillator board.
 
 ## Repo Layout
 
